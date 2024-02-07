@@ -14,16 +14,18 @@ const headerStyles = createUseStyles({
     contractName: {
         fontSize: '24px',
         color: '#FFFFFF',
+        letterSpacing: '2px',
         display: 'inline-block',
         marginRight: '10px'
     },
     contractStatus: {
-        fontSize: '20px',
+        fontSize: '14px',
         color: '#FFFFFF',
         display: 'inline-block',
         backgroundColor: '#000000',
         borderRadius: '20px',
-        padding: '0 10px 5px 10px'
+        padding: '1px 12px 3px 12px',
+        verticalAlign: 'baseline'
     },
     headerMenu: {
         position: 'absolute',
