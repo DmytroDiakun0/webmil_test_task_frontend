@@ -9,7 +9,7 @@ import PowerIcon from '@mui/icons-material/Power';
 import DirectionsCarIcon from '@mui/icons-material/DirectionsCar';
 
 function VehicleCard() {
-    //const classes = vehicleCardStyles();
+    const classes = vehicleCardStyles();
     const cardClasses = cardStyles();
 
     return (
