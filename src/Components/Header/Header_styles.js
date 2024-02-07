@@ -41,7 +41,7 @@ const headerStyles = createUseStyles({
         textTransform: 'uppercase',
         textDecoration: 'none'
     },
-    /*activeLink: {
+    activeLink: {
         backgroundColor: '#FFFFFF',
         borderRadius: '10px 10px 0 0',
         border: '2px solid #000000',
@@ -51,7 +51,7 @@ const headerStyles = createUseStyles({
         fontSize: '12px',
         textTransform: 'uppercase',
         textDecoration: 'none'
-    },*/
+    },
     actionButtonsBar: {
         position: 'absolute',
         bottom: '8px',
