@@ -1,6 +1,7 @@
 import overviewContentStyles from "./OverviewContent_styles";
 import {Box, Grid} from "@mui/material";
 import CustomerCard from "../CustomerCard/CustomerCard";
+import VehicleCard from "../VehicleCard/VehicleCard";
 
 function OverviewContent() {
     const classes = overviewContentStyles();
@@ -14,7 +15,7 @@ function OverviewContent() {
             </Grid>
             <Grid item xs={6}>
                 <Box className={classes.gridItemContent}>
-                    <Box sx={{backgroundColor: 'grey', height: '100px'}}/>
+                    <VehicleCard/>
                 </Box>
             </Grid>
             <Grid item xs={12}>

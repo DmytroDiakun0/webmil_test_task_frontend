@@ -1,15 +1,15 @@
-import customerCardStyles from "./CustomerCard_styles";
 import cardStyles from "../../Styles/CardStyles";
+import vehicleCardStyles from "./VehicleCard_styles";
 import {Box, Button, Card, CardContent} from "@mui/material";
-import AccountCircleIcon from '@mui/icons-material/AccountCircle';
-import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
-import EmailIcon from '@mui/icons-material/Email';
-import PlaceIcon from '@mui/icons-material/Place';
-import LocationCityIcon from '@mui/icons-material/LocationCity';
 import EditIcon from '@mui/icons-material/Edit';
+import CalendarTodayIcon from '@mui/icons-material/CalendarToday';
+import ExtensionIcon from '@mui/icons-material/Extension';
+import LocalGasStationIcon from '@mui/icons-material/LocalGasStation';
+import PowerIcon from '@mui/icons-material/Power';
+import DirectionsCarIcon from '@mui/icons-material/DirectionsCar';
 
-function CustomerCard() {
-    const classes = customerCardStyles();
+function VehicleCard() {
+    //const classes = vehicleCardStyles();
     const cardClasses = cardStyles();
 
     return (
@@ -21,21 +21,25 @@ function CustomerCard() {
                 </Button>
             </Box>
             <Card variant="outlined" className={cardClasses.card}>
+
                 <CardContent>
                     <Box className={cardClasses.cardFirstElement}>
-                        <AccountCircleIcon className={cardClasses.cardFirstIcon}/> Oleksandr
+                        <DirectionsCarIcon className={cardClasses.cardFirstIcon}/> AT0000AK
                     </Box>
                     <Box className={cardClasses.cardElement}>
-                        <LocalPhoneIcon className={cardClasses.cardIcon}/> +000000
+                        <EditIcon className={cardClasses.cardIcon}/> AMLMEA
                     </Box>
                     <Box className={cardClasses.cardElement}>
-                        <EmailIcon className={cardClasses.cardIcon}/> test@email.com
+                        <CalendarTodayIcon className={cardClasses.cardIcon}/> 24.02.2022
                     </Box>
                     <Box className={cardClasses.cardElement}>
-                        <PlaceIcon className={cardClasses.cardIcon}/> Mazepy
+                        <ExtensionIcon className={cardClasses.cardIcon}/> Volvo V40
                     </Box>
                     <Box className={cardClasses.cardElement}>
-                        <LocationCityIcon className={cardClasses.cardIcon}/> Ivano-Frankivsk
+                        <LocalGasStationIcon className={cardClasses.cardIcon}/> Diesel
+                    </Box>
+                    <Box className={cardClasses.cardElement}>
+                        <PowerIcon className={cardClasses.cardIcon}/> 140 kW
                     </Box>
                 </CardContent>
             </Card>
@@ -43,4 +47,4 @@ function CustomerCard() {
     );
 }
 
-export default CustomerCard;
+export default VehicleCard;
