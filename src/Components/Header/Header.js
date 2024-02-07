@@ -1,4 +1,3 @@
-import './Header_styles';
 import {Box, Button, Link} from "@mui/material";
 import headerStyles from "./Header_styles";
 import CloseIcon from '@mui/icons-material/Close';
@@ -20,11 +19,11 @@ function Header() {
             <Box className={classes.actionButtonsBar}>
                 <Button variant="contained" className={classes.actionButton}
                         sx={{backgroundColor: "#105e65", '&:hover': {backgroundColor: '#105e65'}}}>
-                    <ShoppingCartIcon className={classes.actionButtonIcons}/> Buy Now
+                    <ShoppingCartIcon className={classes.actionButtonIcon}/> Buy Now
                 </Button>
                 <Button variant="contained" className={classes.actionButton}
                         sx={{backgroundColor: "#a33e43", '&:hover': {backgroundColor: '#a33e43'}}}>
-                    <CloseIcon className={classes.actionButtonIcons}/> Close Offer
+                    <CloseIcon className={classes.actionButtonIcon}/> Close Offer
                 </Button>
             </Box>
         </Box>

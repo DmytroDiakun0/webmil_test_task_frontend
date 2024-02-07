@@ -10,13 +10,13 @@ function SideMenu() {
     return (
         <Box className={classes.sideMenu}>
             <Link className={classes.sideMenuLink} href='#'>
-                <DashboardIcon className={classes.sideMenuIcons}/> Overview
+                <DashboardIcon className={classes.sideMenuIcon}/> Overview
             </Link>
             <Link className={classes.sideMenuLink} href='#'>
-                <GroupIcon className={classes.sideMenuIcons}/> Customers
+                <GroupIcon className={classes.sideMenuIcon}/> Customers
             </Link>
             <Link className={classes.sideMenuLink} href='#'>
-                <SettingsIcon className={classes.sideMenuIcons}/> Administration
+                <SettingsIcon className={classes.sideMenuIcon}/> Administration
             </Link>
         </Box>
     );

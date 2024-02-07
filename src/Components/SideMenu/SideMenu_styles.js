@@ -2,8 +2,8 @@ import { createUseStyles } from "react-jss";
 
 const sideMenuStyles = createUseStyles({
     sideMenu: {
-        width: '250px',
-        padding: '25px 50px'
+        width: '175px',
+        padding: '25px 25px 25px 50px'
     },
     sideMenuLink: {
         display: 'block',
@@ -15,7 +15,7 @@ const sideMenuStyles = createUseStyles({
         fontWeight: '600',
         verticalAlign: 'middle'
     },
-    sideMenuIcons: {
+    sideMenuIcon: {
         fontSize: '22px',
         color: '#105765',
         marginRight: '5px',

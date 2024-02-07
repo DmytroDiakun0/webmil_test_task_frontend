@@ -60,7 +60,7 @@ const headerStyles = createUseStyles({
         fontSize: '12px',
         fontWeight: '300'
     },
-    actionButtonIcons: {
+    actionButtonIcon: {
         fontSize: '14px',
         marginRight: '10px'
     }
