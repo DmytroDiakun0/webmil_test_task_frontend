@@ -1,8 +1,9 @@
 import cardStyles from "../../Styles/CardStyles";
 import contractCardStyles from "./ContractCard_styles";
-import {Box, Card, CardContent, Grid} from "@mui/material";
+import {Box, Button, Card, CardContent, Grid} from "@mui/material";
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
 import PropTypes from "prop-types";
+import EditIcon from "@mui/icons-material/Edit";
 
 function ContractCard(props) {
     const classes = contractCardStyles();
@@ -12,11 +13,14 @@ function ContractCard(props) {
         <Box>
             <Box className={cardClasses.cardHeader}>
                 <Box>Contract</Box>
+                <Button variant="outlined" className={cardClasses.cardActionButton} onClick={props.changeCardFunc}>
+                    <EditIcon className={cardClasses.actionButtonIcon}/> Edit
+                </Button>
             </Box>
             <Card variant="outlined" className={cardClasses.card + ' ' + classes.card}>
                 <CardContent>
                     <Box className={cardClasses.cardFirstElement}>
-                        <ContentCopyIcon className={cardClasses.cardFirstIcon + ' ' + classes.contractNameIcon}/> New vehicle contract
+                        <ContentCopyIcon className={cardClasses.cardFirstIcon + ' ' + classes.contractNameIcon}/> {props.contractDetails.name}
                     </Box>
                     <Grid container>
                         <Grid item container xs={6} className={classes.contractDetail}>

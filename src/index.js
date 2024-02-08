@@ -26,13 +26,14 @@ const initialState = {
         battery: '140'
     },
     contractDetails: {
+        name: 'New Vehicle Contract',
         id: '00001',
-        totalPrice: '3555.00',
+        totalPrice: '355500',
         duration: '36',
-        distance: '140.000',
+        distance: '140000',
         customerPrice: '98.75',
         startDate: '01.02.2024',
-        odometerAtExpiration: '140.001',
+        odometerAtExpiration: '140001',
         endDate: '01.02.2027',
         startMileage: '1'
     },

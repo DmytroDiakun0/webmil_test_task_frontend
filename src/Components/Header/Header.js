@@ -3,6 +3,7 @@ import headerStyles from "./Header_styles";
 import StatusIconContainer from "../../Store/Containers/StatusIconContainer";
 import BuyButtonContainer from "../../Store/Containers/BuyButtonContainer";
 import CloseButtonContainer from "../../Store/Containers/CloseButtonContainer";
+import HeaderContractNameContainer from "../../Store/Containers/HeaderContractNameContainer";
 
 function Header() {
     const classes = headerStyles();
@@ -25,7 +26,7 @@ function Header() {
     return (
         <Box className={classes.header}>
             <Box className={classes.contractInfo}>
-                <Box className={classes.contractName}>New vehicle contract</Box>
+                <HeaderContractNameContainer className={classes.contractName}/>
                 <StatusIconContainer className={classes.contractStatus}/>
             </Box>
             <Box className={classes.headerMenu}>

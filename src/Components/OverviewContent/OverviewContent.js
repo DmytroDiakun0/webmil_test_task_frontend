@@ -6,6 +6,7 @@ import EventsContainer from "../../Store/Containers/EventsContainer";
 import CustomerCardEditContainer from "../../Store/Containers/CustomerCardEditContainer";
 import {Component} from "react";
 import VehicleCardEditContainer from "../../Store/Containers/VehicleCardEditContainer";
+import ContractCardEditContainer from "../../Store/Containers/ContractCardEditContainer";
 
 class OverviewContent extends Component {
     constructor(props) {
@@ -14,13 +15,15 @@ class OverviewContent extends Component {
         this.state = {
             customerMode: 'view',
             vehicleMode: 'view',
-            contractDetailsMode: 'view'
+            contractMode: 'view'
         }
 
         this.changeCustomerMode = this.changeCustomerMode.bind(this);
         this.customerCard = this.customerCard.bind(this);
         this.changeVehicleMode = this.changeVehicleMode.bind(this);
         this.vehicleCard = this.vehicleCard.bind(this);
+        this.changeContractMode = this.changeContractMode.bind(this);
+        this.contractCard = this.contractCard.bind(this);
     }
 
     changeCustomerMode() {
@@ -39,9 +42,13 @@ class OverviewContent extends Component {
         }
     }
 
-    /*const changeContractDetailsMode = () => {
-        contractDetailsEditMode = !contractDetailsEditMode;
-    }*/
+    changeContractMode() {
+        if(this.state.contractMode === 'view') {
+            this.setState({ contractMode : 'edit'})
+        } else {
+            this.setState({ contractMode : 'view'})
+        }
+    }
 
     customerCard() {
         if(this.state.customerMode === 'edit') {
@@ -56,6 +63,14 @@ class OverviewContent extends Component {
             return (<VehicleCardEditContainer changeCardFunc={this.changeVehicleMode}/>)
         } else if(this.state.vehicleMode === 'view') {
             return (<VehicleContainer changeCardFunc={this.changeVehicleMode}/>)
+        }
+    }
+
+    contractCard() {
+        if(this.state.contractMode === 'edit') {
+            return (<ContractCardEditContainer changeCardFunc={this.changeContractMode}/>)
+        } else if(this.state.contractMode === 'view') {
+            return (<ContractContainer changeCardFunc={this.changeContractMode}/>)
         }
     }
 
@@ -74,7 +89,7 @@ class OverviewContent extends Component {
                 </Grid>
                 <Grid item xs={12}>
                     <Box className={this.props.classes.gridItemContent}>
-                        <ContractContainer/>
+                        {this.contractCard()}
                     </Box>
                 </Grid>
                 <Grid item xs={12}>

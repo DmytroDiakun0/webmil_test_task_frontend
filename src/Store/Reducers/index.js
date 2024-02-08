@@ -16,6 +16,7 @@ const initialState = {
         battery: '-'
     },
     contractDetails: {
+        name: '-',
         id: '-',
         totalPrice: '-',
         duration: '-',
