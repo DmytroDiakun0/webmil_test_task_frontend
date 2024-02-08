@@ -2,50 +2,11 @@ import cardStyles from "../../Styles/CardStyles";
 import contractCardStyles from "./ContractCard_styles";
 import {Box, Card, CardContent, Grid} from "@mui/material";
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
+import PropTypes from "prop-types";
 
-function ContractCard() {
+function ContractCard(props) {
     const classes = contractCardStyles();
     const cardClasses = cardStyles();
-
-    const param = [
-        'ID #:',
-        'Total Price:',
-        'Duration / Distance:',
-        'Customer Price/mth.:',
-        'Start Date:',
-        'Odometer at expiration:',
-        'End Date:',
-        'Start Mileage'
-    ];
-    const value = [
-        '00001',
-        '3.555,00 $',
-        '36 months / 140.000 km',
-        '98.75 $',
-        '01.02.2024',
-        '140.001 km',
-        '01.02.2027',
-        '1 km'
-    ];
-
-    function contractDetails(param, value) {
-        const components = [];
-
-        for(let i = 0; i < param.length; i++) {
-            components.push(
-                <Grid item container xs={6} className={classes.contractDetail}>
-                    <Grid item xs={9} className={classes.contractDetailTitle}>
-                        {param[i]}
-                    </Grid>
-                    <Grid item xs={3} className={classes.contractDetailValue}>
-                        {value[i]}
-                    </Grid>
-                </Grid>
-            )
-        }
-
-        return components;
-    }
 
     return (
         <Box>
@@ -58,12 +19,89 @@ function ContractCard() {
                         <ContentCopyIcon className={cardClasses.cardFirstIcon + ' ' + classes.contractNameIcon}/> New vehicle contract
                     </Box>
                     <Grid container>
-                        {contractDetails(param, value)}
+                        <Grid item container xs={6} className={classes.contractDetail}>
+                            <Grid item xs={9} className={classes.contractDetailTitle}>
+                                ID #:
+                            </Grid>
+                            <Grid item xs={3} className={classes.contractDetailValue}>
+                                {props.contractDetails.id}
+                            </Grid>
+                        </Grid>
+                        <Grid item container xs={6} className={classes.contractDetail}>
+                            <Grid item xs={9} className={classes.contractDetailTitle}>
+                                Total Price:
+                            </Grid>
+                            <Grid item xs={3} className={classes.contractDetailValue}>
+                                {props.contractDetails.totalPrice} $
+                            </Grid>
+                        </Grid>
+                        <Grid item container xs={6} className={classes.contractDetail}>
+                            <Grid item xs={9} className={classes.contractDetailTitle}>
+                                Duration / Distance:
+                            </Grid>
+                            <Grid item xs={3} className={classes.contractDetailValue}>
+                                {props.contractDetails.duration} months / {props.contractDetails.distance} km
+                            </Grid>
+                        </Grid>
+                        <Grid item container xs={6} className={classes.contractDetail}>
+                            <Grid item xs={9} className={classes.contractDetailTitle}>
+                                Customer Price/mth.:
+                            </Grid>
+                            <Grid item xs={3} className={classes.contractDetailValue}>
+                                {props.contractDetails.customerPrice} $
+                            </Grid>
+                        </Grid>
+                        <Grid item container xs={6} className={classes.contractDetail}>
+                            <Grid item xs={9} className={classes.contractDetailTitle}>
+                                Start Date:
+                            </Grid>
+                            <Grid item xs={3} className={classes.contractDetailValue}>
+                                {props.contractDetails.startDate}
+                            </Grid>
+                        </Grid>
+                        <Grid item container xs={6} className={classes.contractDetail}>
+                            <Grid item xs={9} className={classes.contractDetailTitle}>
+                                Odometer at expiration:
+                            </Grid>
+                            <Grid item xs={3} className={classes.contractDetailValue}>
+                                {props.contractDetails.odometerAtExpiration} km
+                            </Grid>
+                        </Grid>
+                        <Grid item container xs={6} className={classes.contractDetail}>
+                            <Grid item xs={9} className={classes.contractDetailTitle}>
+                                End Date:
+                            </Grid>
+                            <Grid item xs={3} className={classes.contractDetailValue}>
+                                {props.contractDetails.endDate}
+                            </Grid>
+                        </Grid>
+                        <Grid item container xs={6} className={classes.contractDetail}>
+                            <Grid item xs={9} className={classes.contractDetailTitle}>
+                                Start Mileage:
+                            </Grid>
+                            <Grid item xs={3} className={classes.contractDetailValue}>
+                                {props.contractDetails.startMileage} km
+                            </Grid>
+                        </Grid>
                     </Grid>
                 </CardContent>
             </Card>
         </Box>
     );
 }
+
+ContractCard.propTypes = {
+    contractDetails: PropTypes.shape({
+        id: PropTypes.string.isRequired,
+        totalPrice: PropTypes.string.isRequired,
+        duration: PropTypes.string.isRequired,
+        distance: PropTypes.string.isRequired,
+        customerPrice: PropTypes.string.isRequired,
+        startDate: PropTypes.string.isRequired,
+        odometerAtExpiration: PropTypes.string.isRequired,
+        endDate: PropTypes.string.isRequired,
+        startMileage: PropTypes.string.isRequired
+    }).isRequired
+};
 
 export default ContractCard;

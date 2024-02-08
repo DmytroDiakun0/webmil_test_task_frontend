@@ -7,8 +7,9 @@ import EmailIcon from '@mui/icons-material/Email';
 import PlaceIcon from '@mui/icons-material/Place';
 import LocationCityIcon from '@mui/icons-material/LocationCity';
 import EditIcon from '@mui/icons-material/Edit';
+import PropTypes from "prop-types";
 
-function CustomerCard() {
+function CustomerCard(props) {
     const classes = customerCardStyles();
     const cardClasses = cardStyles();
 
@@ -23,24 +24,34 @@ function CustomerCard() {
             <Card variant="outlined" className={cardClasses.card}>
                 <CardContent>
                     <Box className={cardClasses.cardFirstElement}>
-                        <AccountCircleIcon className={cardClasses.cardFirstIcon}/> Oleksandr
+                        <AccountCircleIcon className={cardClasses.cardFirstIcon}/> {props.customer.name}
                     </Box>
                     <Box className={cardClasses.cardElement}>
-                        <LocalPhoneIcon className={cardClasses.cardIcon}/> +000000
+                        <LocalPhoneIcon className={cardClasses.cardIcon}/> +{props.customer.phoneNumber}
                     </Box>
                     <Box className={cardClasses.cardElement}>
-                        <EmailIcon className={cardClasses.cardIcon}/> test@email.com
+                        <EmailIcon className={cardClasses.cardIcon}/> {props.customer.mail}
                     </Box>
                     <Box className={cardClasses.cardElement}>
-                        <PlaceIcon className={cardClasses.cardIcon}/> Mazepy
+                        <PlaceIcon className={cardClasses.cardIcon}/> {props.customer.street}
                     </Box>
                     <Box className={cardClasses.cardElement}>
-                        <LocationCityIcon className={cardClasses.cardIcon}/> Ivano-Frankivsk
+                        <LocationCityIcon className={cardClasses.cardIcon}/> {props.customer.city}
                     </Box>
                 </CardContent>
             </Card>
         </Box>
     );
 }
+
+CustomerCard.propTypes = {
+    customer: PropTypes.shape({
+        name: PropTypes.string.isRequired,
+        phoneNumber: PropTypes.string.isRequired,
+        mail: PropTypes.string.isRequired,
+        street: PropTypes.string.isRequired,
+        city: PropTypes.string.isRequired
+    }).isRequired
+};
 
 export default CustomerCard;

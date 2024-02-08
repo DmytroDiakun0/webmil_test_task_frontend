@@ -1,9 +1,9 @@
 import overviewContentStyles from "./OverviewContent_styles";
 import {Box, Grid} from "@mui/material";
-import CustomerCard from "../CustomerCard/CustomerCard";
-import VehicleCard from "../VehicleCard/VehicleCard";
-import ContractCard from "../ContractCard/ContractCard";
-import EventsCard from "../EventsCard/EventsCard";
+import CustomerContainer from "../../Store/Containers/CustomerContainer";
+import VehicleContainer from "../../Store/Containers/VehicleContainer";
+import ContractContainer from "../../Store/Containers/ContractContainer";
+import EventsContainer from "../../Store/Containers/EventsContainer";
 
 function OverviewContent() {
     const classes = overviewContentStyles();
@@ -12,22 +12,22 @@ function OverviewContent() {
         <Grid container className={classes.overviewContent}>
             <Grid item xs={6}>
                 <Box className={classes.gridItemContent}>
-                    <CustomerCard/>
+                    <CustomerContainer/>
                 </Box>
             </Grid>
             <Grid item xs={6}>
                 <Box className={classes.gridItemContent}>
-                    <VehicleCard/>
+                    <VehicleContainer/>
                 </Box>
             </Grid>
             <Grid item xs={12}>
                 <Box className={classes.gridItemContent}>
-                    <ContractCard/>
+                    <ContractContainer/>
                 </Box>
             </Grid>
             <Grid item xs={12}>
                 <Box className={classes.gridItemContent}>
-                    <EventsCard/>
+                    <EventsContainer/>
                 </Box>
             </Grid>
         </Grid>

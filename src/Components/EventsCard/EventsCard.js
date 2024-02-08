@@ -3,9 +3,28 @@ import eventsCardStyles from "./EventsCard_styles";
 import {Box, Card, CardContent, Grid} from "@mui/material";
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 
-function EventsCard() {
+function EventsCard(props) {
     const classes = eventsCardStyles();
     const cardClasses = cardStyles();
+
+    const eventslist = () => {
+        const components = [];
+
+        for(let i = 0; i < props.events.length; i++) {
+            components.push(
+                <Grid container className={classes.eventInfo}>
+                    <Grid item xs={6}>
+                        {props.events[i].time}
+                    </Grid>
+                    <Grid item xs={6}>
+                        {props.events[i].type}
+                    </Grid>
+                </Grid>
+            )
+        }
+
+        return components;
+    }
 
     return (
         <Box>
@@ -22,22 +41,7 @@ function EventsCard() {
                             Type / Comment
                         </Grid>
                     </Grid>
-                    <Grid container className={classes.eventInfo}>
-                        <Grid item xs={6}>
-                            02.02.2024 14:22
-                        </Grid>
-                        <Grid item xs={6}>
-                            Buy Now
-                        </Grid>
-                    </Grid>
-                    <Grid container className={classes.eventInfo}>
-                        <Grid item xs={6} >
-                            01.02.2024 00:32
-                        </Grid>
-                        <Grid item xs={6}>
-                            Created
-                        </Grid>
-                    </Grid>
+                    {eventslist()}
                 </CardContent>
             </Card>
         </Box>

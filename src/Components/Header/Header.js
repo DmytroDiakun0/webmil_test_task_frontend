@@ -2,8 +2,9 @@ import {Box, Button, Link} from "@mui/material";
 import headerStyles from "./Header_styles";
 import CloseIcon from '@mui/icons-material/Close';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import PropTypes from "prop-types";
 
-function Header() {
+function Header(props) {
     const classes = headerStyles();
 
     const currentPath = window.location.pathname;
@@ -25,7 +26,7 @@ function Header() {
         <Box className={classes.header}>
             <Box className={classes.contractInfo}>
                 <Box className={classes.contractName}>New vehicle contract</Box>
-                <Box className={classes.contractStatus}>Active</Box>
+                <Box className={classes.contractStatus}>{props.contractStatus}</Box>
             </Box>
             <Box className={classes.headerMenu}>
                 <Link className={generalButtonClass} href='/general/overview'>General</Link>
@@ -44,5 +45,9 @@ function Header() {
         </Box>
     );
 }
+
+Header.propTypes = {
+    contractStatus: PropTypes.string.isRequired,
+};
 
 export default Header;

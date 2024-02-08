@@ -7,8 +7,9 @@ import ExtensionIcon from '@mui/icons-material/Extension';
 import LocalGasStationIcon from '@mui/icons-material/LocalGasStation';
 import PowerIcon from '@mui/icons-material/Power';
 import DirectionsCarIcon from '@mui/icons-material/DirectionsCar';
+import PropTypes from "prop-types";
 
-function VehicleCard() {
+function VehicleCard(props) {
     const classes = vehicleCardStyles();
     const cardClasses = cardStyles();
 
@@ -24,27 +25,38 @@ function VehicleCard() {
 
                 <CardContent>
                     <Box className={cardClasses.cardFirstElement}>
-                        <DirectionsCarIcon className={cardClasses.cardFirstIcon}/> AT0000AK
+                        <DirectionsCarIcon className={cardClasses.cardFirstIcon}/> {props.vehicle.carNumber}
                     </Box>
                     <Box className={cardClasses.cardElement}>
-                        <EditIcon className={cardClasses.cardIcon}/> AMLMEA
+                        <EditIcon className={cardClasses.cardIcon}/> {props.vehicle.serialNumber}
                     </Box>
                     <Box className={cardClasses.cardElement}>
-                        <CalendarTodayIcon className={cardClasses.cardIcon}/> 24.02.2022
+                        <CalendarTodayIcon className={cardClasses.cardIcon}/> {props.vehicle.releaseDate}
                     </Box>
                     <Box className={cardClasses.cardElement}>
-                        <ExtensionIcon className={cardClasses.cardIcon}/> Volvo V40
+                        <ExtensionIcon className={cardClasses.cardIcon}/> {props.vehicle.brand}
                     </Box>
                     <Box className={cardClasses.cardElement}>
-                        <LocalGasStationIcon className={cardClasses.cardIcon}/> Diesel
+                        <LocalGasStationIcon className={cardClasses.cardIcon}/> {props.vehicle.fuelType}
                     </Box>
                     <Box className={cardClasses.cardElement}>
-                        <PowerIcon className={cardClasses.cardIcon}/> 140 kW
+                        <PowerIcon className={cardClasses.cardIcon}/> {props.vehicle.battery} kW
                     </Box>
                 </CardContent>
             </Card>
         </Box>
     );
 }
+
+VehicleCard.propTypes = {
+    vehicle: PropTypes.shape({
+        carNumber: PropTypes.string.isRequired,
+        serialNumber: PropTypes.string.isRequired,
+        releaseDate: PropTypes.string.isRequired,
+        brand: PropTypes.string.isRequired,
+        fuelType: PropTypes.string.isRequired,
+        battery: PropTypes.string.isRequired
+    }).isRequired
+};
 
 export default VehicleCard;
