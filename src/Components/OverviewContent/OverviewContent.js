@@ -5,6 +5,7 @@ import ContractContainer from "../../Store/Containers/ContractContainer";
 import EventsContainer from "../../Store/Containers/EventsContainer";
 import CustomerCardEditContainer from "../../Store/Containers/CustomerCardEditContainer";
 import {Component} from "react";
+import VehicleCardEditContainer from "../../Store/Containers/VehicleCardEditContainer";
 
 class OverviewContent extends Component {
     constructor(props) {
@@ -18,6 +19,8 @@ class OverviewContent extends Component {
 
         this.changeCustomerMode = this.changeCustomerMode.bind(this);
         this.customerCard = this.customerCard.bind(this);
+        this.changeVehicleMode = this.changeVehicleMode.bind(this);
+        this.vehicleCard = this.vehicleCard.bind(this);
     }
 
     changeCustomerMode() {
@@ -28,11 +31,15 @@ class OverviewContent extends Component {
         }
     }
 
-    /*const changeVehicleMode = () => {
-        vehicleEditMode = !vehicleEditMode;
+    changeVehicleMode() {
+        if(this.state.vehicleMode === 'view') {
+            this.setState({ vehicleMode : 'edit'})
+        } else {
+            this.setState({ vehicleMode : 'view'})
+        }
     }
 
-    const changeContractDetailsMode = () => {
+    /*const changeContractDetailsMode = () => {
         contractDetailsEditMode = !contractDetailsEditMode;
     }*/
 
@@ -41,6 +48,14 @@ class OverviewContent extends Component {
             return (<CustomerCardEditContainer changeCardFunc={this.changeCustomerMode}/>)
         } else if(this.state.customerMode === 'view') {
             return (<CustomerContainer changeCardFunc={this.changeCustomerMode}/>)
+        }
+    }
+
+    vehicleCard() {
+        if(this.state.vehicleMode === 'edit') {
+            return (<VehicleCardEditContainer changeCardFunc={this.changeVehicleMode}/>)
+        } else if(this.state.vehicleMode === 'view') {
+            return (<VehicleContainer changeCardFunc={this.changeVehicleMode}/>)
         }
     }
 
@@ -54,7 +69,7 @@ class OverviewContent extends Component {
                 </Grid>
                 <Grid item xs={6}>
                     <Box className={this.props.classes.gridItemContent}>
-                        <VehicleContainer/>
+                        {this.vehicleCard()}
                     </Box>
                 </Grid>
                 <Grid item xs={12}>
