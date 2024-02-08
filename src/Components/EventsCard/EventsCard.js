@@ -10,7 +10,7 @@ function EventsCard(props) {
     const eventslist = () => {
         const components = [];
 
-        for(let i = 0; i < props.events.length; i++) {
+        for(let i = props.events.length-1; i >= 0; i--) {
             components.push(
                 <Grid container className={classes.eventInfo}>
                     <Grid item xs={6}>

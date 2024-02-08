@@ -6,14 +6,14 @@ import {BrowserRouter, Routes, Route} from "react-router-dom";
 import Statistics from "../Statistics/Statistics";
 import Customers from "../Customers/Customers";
 import Administration from "../Administration/Administration";
-import HeaderContainer from "../../Store/Containers/HeaderContainer";
+import Header from "../Header/Header";
 
 function App() {
     const classes = appStyles();
 
     return (
         <Box>
-            <HeaderContainer/>
+            <Header/>
             <BrowserRouter>
                 <Routes>
                     <Route path="/" element={<OverviewComp/>}/>

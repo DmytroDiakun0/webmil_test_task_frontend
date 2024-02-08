@@ -1,8 +1,8 @@
 import { connect } from 'react-redux';
-import Header from "../../Components/Header/Header";
+import StatusIcon from "../../Components/Header/StatusIcon";
 
 const mapStateToProps = (state) => ({
     contractStatus: state.contractStatus
 });
 
-export default connect(mapStateToProps)(Header);
+export default connect(mapStateToProps)(StatusIcon);
