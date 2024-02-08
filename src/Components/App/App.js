@@ -7,6 +7,7 @@ import Statistics from "../Statistics/Statistics";
 import Customers from "../Customers/Customers";
 import Administration from "../Administration/Administration";
 import Header from "../Header/Header";
+import overviewContentStyles from "../OverviewContent/OverviewContent_styles";
 
 function App() {
     const classes = appStyles();
@@ -34,7 +35,7 @@ const OverviewComp = () => {
                 <SideMenu/>
             </Grid>
             <Grid item xs>
-                <OverviewContent/>
+                <OverviewContent classes={overviewContentStyles()}/>
             </Grid>
         </Grid>
     )

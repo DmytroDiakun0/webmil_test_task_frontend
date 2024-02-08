@@ -16,7 +16,7 @@ function VehicleCard(props) {
     return (
         <Box>
             <Box className={cardClasses.cardHeader}>
-                <Box>Customer</Box>
+                <Box>Vehicle</Box>
                 <Button variant="outlined" className={cardClasses.cardActionButton}>
                     <EditIcon className={cardClasses.actionButtonIcon}/> Edit
                 </Button>
