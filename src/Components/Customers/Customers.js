@@ -3,7 +3,7 @@ import {useEffect, useState} from "react";
 import CustomerCard from "../CustomerCard/CustomerCard";
 import customersStyles from "./Customers_styles";
 
-function Customers(props) {
+function Customers() {
     const classes = customersStyles();
 
     const [customers, setCustomers] = useState([]);
