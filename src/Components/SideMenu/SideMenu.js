@@ -3,6 +3,7 @@ import sideMenuStyles from "./SideMenu_styles";
 import SettingsIcon from '@mui/icons-material/Settings';
 import GroupIcon from '@mui/icons-material/Group';
 import DashboardIcon from '@mui/icons-material/Dashboard';
+import ToysIcon from '@mui/icons-material/Toys';
 
 function SideMenu() {
     const classes = sideMenuStyles();
@@ -14,6 +15,9 @@ function SideMenu() {
             </Link>
             <Link className={classes.sideMenuLink} href='/general/customers'>
                 <GroupIcon className={classes.sideMenuIcon}/> Customers
+            </Link>
+            <Link className={classes.sideMenuLink} href='/general/vehicles'>
+                <ToysIcon className={classes.sideMenuIcon}/> Vehicles
             </Link>
             <Link className={classes.sideMenuLink} href='/general/administration'>
                 <SettingsIcon className={classes.sideMenuIcon}/> Administration
