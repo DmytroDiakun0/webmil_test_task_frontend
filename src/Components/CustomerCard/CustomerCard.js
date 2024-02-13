@@ -16,7 +16,7 @@ function CustomerCard(props) {
     return (
         <Box>
             <Box className={cardClasses.cardHeader}>
-                <Box>Customer</Box>
+                <Box>Customer id: {props.customer.id}</Box>
                 <Button variant="outlined" className={cardClasses.cardActionButton} onClick={props.changeCardFunc}>
                     <EditIcon className={cardClasses.actionButtonIcon}/> Edit
                 </Button>
