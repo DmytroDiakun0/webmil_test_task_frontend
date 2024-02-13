@@ -2,7 +2,7 @@ import { createUseStyles } from "react-jss";
 
 const overviewContentStyles = createUseStyles({
     overviewContent: {
-        marginTop: '40px'
+        marginTop: '20px'
     },
     gridItemContent: {
         boxSizing: 'border-box',
