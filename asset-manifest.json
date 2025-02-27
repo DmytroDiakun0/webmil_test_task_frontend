@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/vehicle_contracts/static/css/main.1ec787a8.css",
-    "main.js": "/vehicle_contracts/static/js/main.6c7bf813.js",
-    "static/js/592.d53d7ca5.chunk.js": "/vehicle_contracts/static/js/592.d53d7ca5.chunk.js",
-    "index.html": "/vehicle_contracts/index.html",
-    "main.1ec787a8.css.map": "/vehicle_contracts/static/css/main.1ec787a8.css.map",
-    "main.6c7bf813.js.map": "/vehicle_contracts/static/js/main.6c7bf813.js.map",
-    "592.d53d7ca5.chunk.js.map": "/vehicle_contracts/static/js/592.d53d7ca5.chunk.js.map"
+    "main.css": "/webmil_test_task_frontend/static/css/main.1ec787a8.css",
+    "main.js": "/webmil_test_task_frontend/static/js/main.061fd79a.js",
+    "static/js/592.d53d7ca5.chunk.js": "/webmil_test_task_frontend/static/js/592.d53d7ca5.chunk.js",
+    "index.html": "/webmil_test_task_frontend/index.html",
+    "main.1ec787a8.css.map": "/webmil_test_task_frontend/static/css/main.1ec787a8.css.map",
+    "main.061fd79a.js.map": "/webmil_test_task_frontend/static/js/main.061fd79a.js.map",
+    "592.d53d7ca5.chunk.js.map": "/webmil_test_task_frontend/static/js/592.d53d7ca5.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.1ec787a8.css",
-    "static/js/main.6c7bf813.js"
+    "static/js/main.061fd79a.js"
   ]
 }
