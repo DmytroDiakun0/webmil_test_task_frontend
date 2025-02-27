@@ -30,8 +30,8 @@ function Header() {
                 <StatusIconContainer className={classes.contractStatus}/>
             </Box>
             <Box className={classes.headerMenu}>
-                <Link className={generalButtonClass} href='/general/overview'>General</Link>
-                <Link className={statisticsButtonClass} href='/statistics'>Statistics</Link>
+                <Link className={generalButtonClass} href='/#/general/overview'>General</Link>
+                <Link className={statisticsButtonClass} href='/#/statistics'>Statistics</Link>
             </Box>
             <Box className={classes.actionButtonsBar}>
                 <BuyButtonContainer classes={classes}/>

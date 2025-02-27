@@ -9,13 +9,13 @@ function SideMenu() {
 
     return (
         <Box className={classes.sideMenu}>
-            <Link className={classes.sideMenuLink} href='/general/overview'>
+            <Link className={classes.sideMenuLink} href='/#/general/overview'>
                 <DashboardIcon className={classes.sideMenuIcon}/> Overview
             </Link>
-            <Link className={classes.sideMenuLink} href='/general/customers'>
+            <Link className={classes.sideMenuLink} href='/#/general/customers'>
                 <GroupIcon className={classes.sideMenuIcon}/> Customers
             </Link>
-            <Link className={classes.sideMenuLink} href='/general/administration'>
+            <Link className={classes.sideMenuLink} href='/#/general/administration'>
                 <SettingsIcon className={classes.sideMenuIcon}/> Administration
             </Link>
         </Box>
